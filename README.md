@@ -27,4 +27,4 @@
 - zsh
 
 ## Screenshot
-![My Desktop](/run/media/pedro/c7cd70f2-a3e2-4390-aa20-5f3fb4a03e8a/dotfiles/screenshots/myDesktop.png )
+![My Desktop](/screenshots/myDesktop.png )
