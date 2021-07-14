@@ -1,5 +1,5 @@
 # Pedro Pereira Arch Based Dotfiles
-## Conteúdo:
+## Content
 
 - Alacritty
 - Autostart.sh
