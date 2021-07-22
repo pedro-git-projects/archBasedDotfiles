@@ -32,5 +32,5 @@ run slstatus &
 sxhkd -c ~/.config/arco-dwm/sxhkd/sxhkdrc &
 run "nitrogen --restore"
 run "wmname LG3D"
-
+run "unclutter"
 
