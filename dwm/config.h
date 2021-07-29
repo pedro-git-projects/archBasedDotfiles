@@ -88,6 +88,8 @@ static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *taskmanager[]  = { "xfce4-taskmanager", NULL };
 static const char *termcmd[] = {"alacritty", NULL};
 static const char *browser[] = {"firefox", NULL};
+static const char *music[] = {"spotify", NULL};
+static const char *code[] = {"code", NULL};
 
 #include "selfrestart.c"
 #include "shiftview.c"
@@ -99,6 +101,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
+	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
+	{ MODKEY,                       XK_c,      spawn,          {.v = code} },
 	{MODKEY, 			XK_Return, spawn,	   {.v=termcmd}	},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
