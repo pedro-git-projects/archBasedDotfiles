@@ -87,6 +87,7 @@ static const char *filecmd[]  = { "thunar", NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *taskmanager[]  = { "xfce4-taskmanager", NULL };
 static const char *termcmd[] = {"alacritty", NULL};
+static const char *browser[] = {"firefox", NULL};
 
 #include "selfrestart.c"
 #include "shiftview.c"
@@ -97,6 +98,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{MODKEY, 			XK_Return, spawn,	   {.v=termcmd}	},
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
