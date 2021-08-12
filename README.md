@@ -1,4 +1,4 @@
-# Pedro Pereira Arch Based Dotfiles
+# Pedro Pereira Arch Linux Dotfiles
 ## Content
 
 - alacritty 
