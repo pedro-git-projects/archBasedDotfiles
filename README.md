@@ -1,30 +1,18 @@
 # Pedro Pereira Arch Based Dotfiles
 ## Content
 
-- Alacritty
-- Autostart.sh
-- DWM
-- Eclipse
-- Installation script
-- Intellij idea
+- alacritty 
+- dwm 
 - SDDM 
-- Terminator
-- Visual Studio Code 
-- Vim
-- ZSH
-
+- st
+- vimrc
+- zathurarc 
+- zshrc
 ---
 
-## Dependencies
+## Details
 
-- TTF Joypixels
-- Unclutter 
-- Gruvbox-material-theme 
-- Picom
-- Nitrogen
-- volumeicon/ numlockx / xfce4-power-manager / nm-applet 
-- xrandr 
-- zsh
+For more information on the dwm setup please see this [repository](https://github.com/pedro-git-projects/pedro-dwm)
 
 ## Screenshot
 ![My Desktop](/screenshots/myDesktop.png )
