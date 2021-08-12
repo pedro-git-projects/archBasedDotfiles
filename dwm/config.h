@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 20;        /* gaps between windows */
+static const unsigned int gappx     = 15;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -11,7 +11,7 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "Noto Sans Mono:size=11","JoyPixels:pixelsize=10:antialias=true:autohint=true"};
+static const char *fonts[]          = { "Noto Sans Mono:size=11","JoyPixels:pixelsize=11:antialias=true:autohint=true"};
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#282828";
 static const char col_gray2[]       = "#282828";
@@ -48,9 +48,7 @@ static const Rule rules[] = {
 	/* class                       instance    title      tags mask      isfloating   monitor */
 	{ "Gimp",                      NULL,       NULL,       0,            0,           -1 },
 	{ "Xfce4-terminal",            NULL,       NULL,       0,            1,           -1 },
-	{ "firefox",                   NULL,       NULL,       0,            0,           -1 },
-	{ "Arcolinux-welcome-app.py",  NULL,       NULL,       0,            1,           -1 },
-	{ "Arcolinux-calamares-tool.py",  NULL,       NULL,       0,            1,           -1 },	
+	{ "firefox",                   NULL,       NULL,       0,            0,           -1 },	
 };
 
 /* layout(s) */
@@ -87,9 +85,15 @@ static const char *filecmd[]  = { "thunar", NULL };
 static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *taskmanager[]  = { "xfce4-taskmanager", NULL };
 static const char *termcmd[] = {"alacritty", NULL};
-static const char *browser[] = {"firefox", NULL};
+static const char *browser[] = {"vimb", NULL};
 static const char *music[] = {"spotify", NULL};
-static const char *code[] = {"code", NULL};
+static const char *code[] = {"neovide", NULL};
+/*logout - must add arco repositories*/
+static const char *logout[] = {"arcolinux-logout", NULL};
+/*audio*/
+static const char *mutecmd[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
+static const char *volupcmd[] = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
+static const char *voldowncmd[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 
 #include "selfrestart.c"
 #include "shiftview.c"
@@ -99,6 +103,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
+	{ MODKEY,			XK_x,	   spawn,	   {.v = logout}},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
@@ -142,6 +147,9 @@ static Key keys[] = {
 	{ Mod1Mask|ShiftMask,	        XK_Tab,	   shiftview,	   {.i = -1 } },
 	{ MODKEY,		        		XK_Tab,    shiftview,	   {.i =  1 } },
 	{ MODKEY|ShiftMask,		        XK_Tab,	   shiftview,	   {.i = -1 } },
+	{ MODKEY|ShiftMask,             XK_m, spawn, 				{.v = mutecmd } },
+	{ MODKEY,             			XK_Down, spawn, 			{.v = voldowncmd } },
+	{ MODKEY,             			XK_Up, spawn, 				{.v = volupcmd } },
 
 
 	TAGKEYS(                        XK_1,                      0)
