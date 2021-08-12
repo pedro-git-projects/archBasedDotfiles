@@ -1,77 +1,10 @@
 export ZSH=/usr/share/oh-my-zsh/
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# if you installed the package oh-my-zsh-powerline-theme-git then you type here "powerline" as zsh theme
+
 ZSH_THEME="lambda"
 
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# ZSH_THEME_RANDOM_IGNORED=(pygmalion tjkirch_mod)
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setopt GLOB_DOTS
@@ -81,7 +14,7 @@ setopt GLOB_DOTS
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make nano the default editor
+# Make vim the default editor
 
 export EDITOR='vim'
 export VISUAL='vim'
@@ -205,14 +138,6 @@ alias mirrorxx="sudo reflector --age 6 --latest 20  --fastest 20 --threads 20 --
 #mounting the folder Public for exchange between host and guest on virtualbox
 alias vbm="sudo /usr/local/bin/arcolinux-vbox-share"
 
-#shopt
-#shopt -s autocd # change to named directory
-#shopt -s cdspell # autocorrects cd misspellings
-#shopt -s cmdhist # save multi-line commands in history as single line
-#shopt -s dotglob
-#shopt -s histappend # do not overwrite history
-#shopt -s expand_aliases # expand aliases
-
 #youtube-dl
 alias yta-aac="youtube-dl --extract-audio --audio-format aac "
 alias yta-best="youtube-dl --extract-audio --audio-format best "
@@ -241,7 +166,7 @@ alias rg="rg --sort path"
 #get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-#nano for important configuration files
+#vim for important configuration files
 #know what you do in these files
 alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
 alias npacman="sudo $EDITOR /etc/pacman.conf"
@@ -314,3 +239,15 @@ ex ()
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
+alias marcusScript="/home/pedro/Documents/dev/scripts/marcusScript/marcus.sh"
+marcusScript
+
+# __/\\\\\\\\\\\\\____/\\\\\\\\\\\\\\\__/\\\\\\\\\\\\_______/\\\\\\\\\___________/\\\\\______        
+#  _\/\\\/////////\\\_\/\\\///////////__\/\\\////////\\\___/\\\///////\\\_______/\\\///\\\____       
+#   _\/\\\_______\/\\\_\/\\\_____________\/\\\______\//\\\_\/\\\_____\/\\\_____/\\\/__\///\\\__      
+#    _\/\\\\\\\\\\\\\/__\/\\\\\\\\\\\_____\/\\\_______\/\\\_\/\\\\\\\\\\\/_____/\\\______\//\\\_     
+#     _\/\\\/////////____\/\\\///////______\/\\\_______\/\\\_\/\\\//////\\\____\/\\\_______\/\\\_    
+#      _\/\\\_____________\/\\\_____________\/\\\_______\/\\\_\/\\\____\//\\\___\//\\\______/\\\__   
+#       _\/\\\_____________\/\\\_____________\/\\\_______/\\\__\/\\\_____\//\\\___\///\\\__/\\\____  
+#        _\/\\\_____________\/\\\\\\\\\\\\\\\_\/\\\\\\\\\\\\/___\/\\\______\//\\\____\///\\\\\/_____ 
+#         _\///______________\///////////////__\////////////_____\///________\///_______\/////_______
