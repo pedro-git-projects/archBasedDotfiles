@@ -87,8 +87,12 @@ static const char *calendar[]  = { "gsimplecal", NULL };
 static const char *taskmanager[]  = { "xfce4-taskmanager", NULL };
 static const char *termcmd[] = {"st", NULL};
 static const char *browser[] = {"firefox", NULL};
+<<<<<<< HEAD
 static const char *browser2[] = {"chromium", NULL};
 static const char *browser3[] = {"vieb", NULL};
+=======
+static const char *vieb[] = {"chromium", NULL};
+>>>>>>> 156ce3b8592c64a3ca43c5e982c7c512cf2e8947
 static const char *music[] = {"spotify", NULL};
 static const char *code[] = {"code", NULL};
 /*logout - must add arco repositories*/
@@ -108,8 +112,12 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = filecmd } },
 	{ MODKEY,			XK_x,	   spawn,	   {.v = logout}},
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+<<<<<<< HEAD
 	{ MODKEY|ShiftMask,             XK_o, spawn,          {.v = browser2 } },
 	{ MODKEY|ControlMask|ShiftMask,             XK_o, spawn,          {.v = browser3 } },
+=======
+	{ MODKEY|ShiftMask,             XK_o, spawn,          {.v = vieb } },
+>>>>>>> 156ce3b8592c64a3ca43c5e982c7c512cf2e8947
 	{ MODKEY,                       XK_o,      spawn,          {.v = browser} },
 	{ MODKEY,                       XK_s,      spawn,          {.v = music} },
 	{ MODKEY,                       XK_c,      spawn,          {.v = code} },

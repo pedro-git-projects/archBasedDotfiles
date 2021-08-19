@@ -9,7 +9,11 @@ function run {
 
 # Render on multiple monitors, change depending on you xrarandr -q output
 run "xrandr --auto --output HDMI-1-0 --mode 1920x1080 --rate 60  --right-of eDP-1"
+<<<<<<< HEAD
 run "kmix"
+=======
+
+>>>>>>> 156ce3b8592c64a3ca43c5e982c7c512cf2e8947
 run "nm-applet"
 run "xfce4-power-manager"
 #run "blueberry-tray"
