@@ -3,6 +3,7 @@
 
 - alacritty 
 - dwm 
+- dmenu
 - SDDM 
 - st
 - vimrc
