@@ -1,8 +1,0 @@
-{
-    "workbench.colorTheme": "Gruvbox Material Dark",
-    "workbench.iconTheme": "material-icon-theme",
-    "editor.fontFamily": "'mononoki Nerd Font Mono', 'regular', monospace, 'Droid Sans Fallback'",
-    "editor.fontSize": 16,
-    "editor.minimap.enabled": false,
-    "editor.wordWrap": "on"
-}
