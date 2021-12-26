@@ -1,3 +1,14 @@
+# __/\\\\\\\\\\\\\____/\\\\\\\\\\\\\\\__/\\\\\\\\\\\\_______/\\\\\\\\\___________/\\\\\______        
+#  _\/\\\/////////\\\_\/\\\///////////__\/\\\////////\\\___/\\\///////\\\_______/\\\///\\\____       
+#   _\/\\\_______\/\\\_\/\\\_____________\/\\\______\//\\\_\/\\\_____\/\\\_____/\\\/__\///\\\__      
+#    _\/\\\\\\\\\\\\\/__\/\\\\\\\\\\\_____\/\\\_______\/\\\_\/\\\\\\\\\\\/_____/\\\______\//\\\_     
+#     _\/\\\/////////____\/\\\///////______\/\\\_______\/\\\_\/\\\//////\\\____\/\\\_______\/\\\_    
+#      _\/\\\_____________\/\\\_____________\/\\\_______\/\\\_\/\\\____\//\\\___\//\\\______/\\\__   
+#       _\/\\\_____________\/\\\_____________\/\\\_______/\\\__\/\\\_____\//\\\___\///\\\__/\\\____  
+#        _\/\\\_____________\/\\\\\\\\\\\\\\\_\/\\\\\\\\\\\\/___\/\\\______\//\\\____\///\\\\\/_____ 
+#         _\///______________\///////////////__\////////////_____\///________\///_______\/////_______
+
+
 export ZSH=/usr/share/oh-my-zsh/
 
 ZSH_THEME="lambda"
@@ -14,10 +25,10 @@ setopt GLOB_DOTS
 
 export HISTCONTROL=ignoreboth:erasedups
 
-# Make vim the default editor
+# Make neovim the default editor
 
-export EDITOR='vim'
-export VISUAL='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 #PS1='[\u@\h \W]\$ '
 
@@ -36,7 +47,7 @@ alias ll='ls -la'
 alias l='ls'
 alias l.="ls -A | egrep '^\.'"
 
-#fix obvious typo's
+#fix typos
 alias cd..='cd ..'
 alias pdw="pwd"
 alias udpate='sudo pacman -Syyu'
@@ -166,46 +177,12 @@ alias rg="rg --sort path"
 #get the error messages from journalctl
 alias jctl="journalctl -p 3 -xb"
 
-#vim for important configuration files
-#know what you do in these files
-alias nlightdm="sudo $EDITOR /etc/lightdm/lightdm.conf"
-alias npacman="sudo $EDITOR /etc/pacman.conf"
-alias ngrub="sudo $EDITOR /etc/default/grub"
-alias nconfgrub="sudo $EDITOR /boot/grub/grub.cfg"
-alias nmkinitcpio="sudo $EDITOR /etc/mkinitcpio.conf"
-alias nmirrorlist="sudo $EDITOR /etc/pacman.d/mirrorlist"
-alias nsddm="sudo $EDITOR /etc/sddm.conf"
-alias nfstab="sudo $EDITOR /etc/fstab"
-alias nnsswitch="sudo $EDITOR /etc/nsswitch.conf"
-alias nsamba="sudo $EDITOR /etc/samba/smb.conf"
-alias nb="$EDITOR ~/.bashrc"
-alias nz="$EDITOR ~/.zshrc"
-
-#gpg
-#verify signature for isos
-alias gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-alias fix-gpg-check="gpg2 --keyserver-options auto-key-retrieve --verify"
-#receive the key of a developer
-alias gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-alias fix-gpg-retrieve="gpg2 --keyserver-options auto-key-retrieve --receive-keys"
-alias fix-key="[ -d ~/.gnupg ] || mkdir ~/.gnupg ; cp /etc/pacman.d/gnupg/gpg.conf ~/.gnupg/ ; echo 'done'"
-
 #maintenance
 alias big="expac -H M '%m\t%n' | sort -h | nl"
 alias downgrada="sudo downgrade --ala-url https://bike.seedhost.eu/arcolinux/"
 
 #systeminfo
 alias probe="sudo -E hw-probe -all -upload"
-
-#shutdown or reboot
-alias ssn="sudo shutdown now"
-alias sr="sudo reboot"
-
-#update betterlockscreen images
-alias bls="betterlockscreen -u /usr/share/backgrounds/arcolinux/"
-
-#give the list of all installed desktops - xsessions desktops
-alias xd="ls /usr/share/xsessions"
 
 # # ex = EXtractor for all kinds of archives
 # # usage: ex <file>
@@ -239,15 +216,53 @@ ex ()
 
 [[ -f ~/.zshrc-personal ]] && . ~/.zshrc-personal
 
-alias marcusScript="/home/pedro/Documents/dev/scripts/marcusScript/marcus.sh"
-marcusScript
+#alias marcusScript="/home/pedro/Documents/dev/scripts/marcusScript/marcus.sh"
+#marcusScript
 
-# __/\\\\\\\\\\\\\____/\\\\\\\\\\\\\\\__/\\\\\\\\\\\\_______/\\\\\\\\\___________/\\\\\______        
-#  _\/\\\/////////\\\_\/\\\///////////__\/\\\////////\\\___/\\\///////\\\_______/\\\///\\\____       
-#   _\/\\\_______\/\\\_\/\\\_____________\/\\\______\//\\\_\/\\\_____\/\\\_____/\\\/__\///\\\__      
-#    _\/\\\\\\\\\\\\\/__\/\\\\\\\\\\\_____\/\\\_______\/\\\_\/\\\\\\\\\\\/_____/\\\______\//\\\_     
-#     _\/\\\/////////____\/\\\///////______\/\\\_______\/\\\_\/\\\//////\\\____\/\\\_______\/\\\_    
-#      _\/\\\_____________\/\\\_____________\/\\\_______\/\\\_\/\\\____\//\\\___\//\\\______/\\\__   
-#       _\/\\\_____________\/\\\_____________\/\\\_______/\\\__\/\\\_____\//\\\___\///\\\__/\\\____  
-#        _\/\\\_____________\/\\\\\\\\\\\\\\\_\/\\\\\\\\\\\\/___\/\\\______\//\\\____\///\\\\\/_____ 
-#         _\///______________\///////////////__\////////////_____\///________\///_______\/////_______
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/pedro/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/pedro/anaconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/pedro/anaconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/pedro/anaconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+
+# cd alias
+alias data="cd /mnt/Data"
+alias ntt="cd /mnt/Data/desafio-trilha-backend-everis"
+alias notes="cd /home/pedro/Documents/notes"
+alias vid="/home/pedro/Videos"
+alias yt="youtube-dl -f mp4"
+alias back="/mnt/Data/trilha_backend_desafios"
+alias rfm="ranger"
+alias teste="/mnt/Data/tests"
+alias ivpn="/opt/ivpn/ui/bin/ivpn-ui"
+alias book="/mnt/Data/books"
+alias jvm="/mnt/Data/books/programming_languages/JVM"
+alias anime="/mnt/Data/video/animes/"
+alias music="mocp"
+alias vi="nvim"
+alias anime="/mnt/Data/video/animes"
+alias studies="/mnt/Data/studies"
+
+# npm 
+NPM_PACKAGES="~/.npm_packages"
+
+export PATH="$PATH:$NPM_PACKAGES/bin"
+
+# Preserve MANPATH if you already defined it somewhere in your config.
+# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
+# Angular
+alias ng="~/.npm_packages/bin/ng"
+
+# http-server
+alias www="~/.npm_packages/bin/http-server"
