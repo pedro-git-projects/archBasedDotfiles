@@ -251,6 +251,8 @@ alias music="mocp"
 alias vi="nvim"
 alias anime="/mnt/Data/video/animes"
 alias studies="/mnt/Data/studies"
+alias neofetch="neofetch --source /home/pedro/Pictures/ascii/horny.txt"
+alias repicom="killall picom || picom --config /home/pedro/.config/dwm/picom.conf&"
 
 # npm 
 NPM_PACKAGES="~/.npm_packages"
