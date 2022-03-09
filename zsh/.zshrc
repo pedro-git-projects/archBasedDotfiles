@@ -240,19 +240,25 @@ alias ntt="cd /mnt/Data/desafio-trilha-backend-everis"
 alias notes="cd /home/pedro/Documents/notes"
 alias vid="/home/pedro/Videos"
 alias yt="youtube-dl -f mp4"
+alias yt-mp3 "youtube-dl -x --audio-format mp3"
 alias back="/mnt/Data/trilha_backend_desafios"
 alias rfm="ranger"
 alias teste="/mnt/Data/tests"
 alias ivpn="/opt/ivpn/ui/bin/ivpn-ui"
 alias book="/mnt/Data/books"
 alias jvm="/mnt/Data/books/programming_languages/JVM"
-alias anime="/mnt/Data/video/animes/"
+alias anime="/mnt/Data/video/anime/"
 alias music="mocp"
 alias vi="nvim"
-alias anime="/mnt/Data/video/animes"
 alias studies="/mnt/Data/studies"
 alias neofetch="neofetch --source /home/pedro/Pictures/ascii/horny.txt"
-alias repicom="killall picom || picom --config /home/pedro/.config/dwm/picom.conf&"
+alias repicom=exec /home/pedro/.scripts/repicom.sh
+alias letsgo="/mnt/Data/studies/go/"
+alias html="xdg-open"
+alias gameboy="vbam -F"
+alias games="/mnt/Data/games"
+alias discord="/home/pedro/Downloads/src/discord/Discord/Discord&disown"
+alias dev="/mnt/Data/dev"
 
 # npm 
 NPM_PACKAGES="~/.npm_packages"
@@ -264,7 +270,14 @@ export PATH="$PATH:$NPM_PACKAGES/bin"
 export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
 
 # Angular
-alias ng="~/.npm_packages/bin/ng"
+alias ng="~/.npm-packages/bin/ng"
 
 # http-server
-alias www="~/.npm_packages/bin/http-server"
+alias www="~/.npm-packages/bin/http-server"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Go 
+alias air="/home/pedro/go/bin/air"
+alias godoc="/home/pedro/go/bin/godoc"
