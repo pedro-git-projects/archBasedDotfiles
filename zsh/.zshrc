@@ -165,11 +165,8 @@ alias ytv-best="youtube-dl -f bestvideo+bestaudio "
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias riplong="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -3000 | nl"
 
-#iso and version used to install ArcoLinux
-alias iso="cat /etc/dev-rel | awk -F '=' '/ISO/ {print $2}'"
-
 #Cleanup orphaned packages
-alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
+# alias cleanup='sudo pacman -Rns $(pacman -Qtdq)'
 
 #search content with ripgrep
 alias rg="rg --sort path"
@@ -252,16 +249,17 @@ alias music="mocp"
 alias vi="nvim"
 alias studies="/mnt/Data/studies"
 alias neofetch="neofetch --source /home/pedro/Pictures/ascii/horny.txt"
-alias repicom=exec /home/pedro/.scripts/repicom.sh
+alias movie="/mnt/Data/video/movie"
 alias letsgo="/mnt/Data/studies/go/"
 alias html="xdg-open"
 alias gameboy="vbam -F"
 alias games="/mnt/Data/games"
 alias discord="/home/pedro/Downloads/src/discord/Discord/Discord&disown"
 alias dev="/mnt/Data/dev"
+alias monitor="/home/pedro/.scripts/monitor.sh"
 
 # npm 
-NPM_PACKAGES="~/.npm_packages"
+NPM_PACKAGES="~/.npm_paceages"
 
 export PATH="$PATH:$NPM_PACKAGES/bin"
 
@@ -278,6 +276,24 @@ alias www="~/.npm-packages/bin/http-server"
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
-# Go 
-alias air="/home/pedro/go/bin/air"
-alias godoc="/home/pedro/go/bin/godoc"
+# Go
+export PATH="$HOME/go/bin:$PATH"
+# alias air="/home/pedro/go/bin/air"
+# alias godoc="/home/pedro/go/bin/godoc"
+
+# Restart picom
+repicom() {
+	killall picom
+	picom --config ~/.config/dwm/picom.conf & 
+	disown
+}
+
+lf () {
+	LF_TEMPDIR="$(mktemp -d -t lf-tempdir-XXXXXX)"
+	LF_TEMPDIR="$LF_TEMPDIR" lf-run -last-dir-path="$LF_TEMPDIR/lastdir" "$@"
+	if [ "$(cat "$LF_TEMPDIR/cdtolastdir" 2>/dev/null)" = "1" ]; then
+		cd "$(cat "$LF_TEMPDIR/lastdir")"
+	fi
+	rm -r "$LF_TEMPDIR"
+	unset LF_TEMPDIR
+}

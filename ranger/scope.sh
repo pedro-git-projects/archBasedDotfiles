@@ -93,11 +93,16 @@ handle_extension() {
             ## Uses: https://github.com/dilshod/xlsx2csv
             xlsx2csv -- "${FILE_PATH}" && exit 5
             exit 1;;
+		## Video
+        mkv|webm|mp4)
+            # Thumbnail
+            ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
+            exit 1;;
 
         ## HTML
         htm|html|xhtml)
             ## Preview as text conversion
-            w3m -dump "${FILE_PATH}" && exit 5
+            bat -dump "${FILE_PATH}" && exit 5
             lynx -dump -- "${FILE_PATH}" && exit 5
             elinks -dump "${FILE_PATH}" && exit 5
             pandoc -s -t markdown -- "${FILE_PATH}" && exit 5
@@ -325,12 +330,12 @@ handle_mime() {
             exiftool "${FILE_PATH}" && exit 5
             exit 1;;
 
-        ## Video and audio
+         ## Video and audio
         video/* | audio/*)
             mediainfo "${FILE_PATH}" && exit 5
             exiftool "${FILE_PATH}" && exit 5
             exit 1;;
-    esac
+         esac
 }
 
 handle_fallback() {
