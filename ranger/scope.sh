@@ -72,7 +72,7 @@ handle_extension() {
             mutool draw -F txt -i -- "${FILE_PATH}" 1-10 | \
               fmt -w "${PV_WIDTH}" && exit 5
             exiftool "${FILE_PATH}" && exit 5
-            exit 1;;
+            exit 2;;
 
         ## BitTorrent
         torrent)
@@ -94,7 +94,7 @@ handle_extension() {
             xlsx2csv -- "${FILE_PATH}" && exit 5
             exit 1;;
 		## Video
-        mkv|webm|mp4)
+        mkv|webm|mp4|avi|flv)
             # Thumbnail
             ffmpegthumbnailer -i "${FILE_PATH}" -o "${IMAGE_CACHE_PATH}" -s 0 && exit 6
             exit 1;;
